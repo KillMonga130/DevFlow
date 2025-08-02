@@ -164,7 +164,7 @@ Always remember what matters most to them.
 **Mueletshedzi Moses Mubvafhi**
 AI Engineer | Cloud Builder | Philosophy Enthusiast
 GitHub: [KillMonga130](https://github.com/KillMonga130)
-LinkedIn: [@MosesMubvafhi]((https://linkedin.com/in/mosesmubvafhi](https://www.linkedin.com/in/mueletshedzimoses/))
+LinkedIn: [@MosesMubvafhi](https://www.linkedin.com/in/mueletshedzimoses)
 
 ---
 
