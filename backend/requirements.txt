@@ -1,0 +1,31 @@
+# Core FastAPI dependencies
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+requests==2.31.0
+
+# Memory system dependencies
+aiofiles==23.2.1
+pydantic-settings==2.1.0
+
+# Database dependencies
+asyncpg==0.29.0  # PostgreSQL async driver
+motor==3.6.0     # MongoDB async driver
+pymongo>=4.9,<4.10  # MongoDB driver (compatible with motor)
+redis==5.0.1     # Redis for caching
+
+# Search and embeddings
+sentence-transformers>=2.2.2
+numpy>=1.24.0
+
+# Security and encryption
+cryptography==41.0.7
+python-jose[cryptography]==3.3.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+httpx==0.25.2
+
+# Development
+python-dotenv==1.0.0
