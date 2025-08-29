@@ -6,7 +6,10 @@ from .conversation import Conversation, Message, ConversationMetadata, MessageMe
 from .context import ConversationContext, ConversationSummary
 from .preferences import UserPreferences, ResponseStyle, TopicInterest, CommunicationPreferences
 from .search import SearchQuery, SearchResult, DateRange
-from .privacy import PrivacySettings, DeleteOptions, UserDataExport
+from .privacy import (
+    PrivacySettings, DeleteOptions, UserDataExport, 
+    DataRetentionPolicy, PrivacyMode, DeleteScope
+)
 from .common import MessageExchange, UserFeedback
 
 __all__ = [
@@ -27,6 +30,9 @@ __all__ = [
     "PrivacySettings",
     "DeleteOptions",
     "UserDataExport",
+    "DataRetentionPolicy",
+    "PrivacyMode", 
+    "DeleteScope",
     "MessageExchange",
     "UserFeedback"
 ]

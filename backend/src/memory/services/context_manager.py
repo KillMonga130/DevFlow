@@ -7,7 +7,7 @@ import logging
 from typing import List, Optional, Dict, Any
 from datetime import datetime, timedelta, timezone
 from collections import Counter
-from ..interfaces.context_manager import ContextManagerInterface
+from ..interfaces import ContextManagerInterface
 from ..models import (
     ConversationContext, Conversation, ConversationSummary, 
     MessageExchange, Message, MessageRole

@@ -4,7 +4,7 @@ Storage layer service implementation.
 
 from typing import List, Optional, Dict, Any
 from datetime import datetime
-from ..interfaces.storage_layer import StorageLayerInterface
+from ..interfaces import StorageLayerInterface
 from ..models import (
     Conversation, ConversationSummary, UserPreferences, 
     PrivacySettings, SearchResult

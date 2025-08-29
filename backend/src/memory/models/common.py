@@ -32,8 +32,8 @@ class MessageExchange(BaseModel):
 
 class UserFeedback(BaseModel):
     """User feedback on system responses."""
-    user_id: str
-    message_id: str
+    user_id: str = Field(..., min_length=1)
+    message_id: str = Field(..., min_length=1)
     feedback_type: FeedbackType
     feedback_text: Optional[str] = None
     rating: Optional[int] = Field(None, ge=1, le=5)  # 1-5 star rating

@@ -47,6 +47,10 @@ interface MemoryService {
   deleteUserData(userId: string, options?: DeleteOptions): Promise<void>
   exportUserData(userId: string): Promise<UserDataExport>
   updatePrivacySettings(userId: string, settings: PrivacySettings): Promise<void>
+  getPrivacySettings(userId: string): Promise<PrivacySettings>
+  
+  // Health and monitoring
+  healthCheck(): Promise<HealthStatus>
 }
 ```
 
@@ -65,10 +69,48 @@ interface ContextManager {
 
 ```typescript
 interface PreferenceEngine {
-  analyzeUserPreferences(userId: string, conversations: Conversation[]): Promise<UserPreferences>
+  analyzePreferences(userId: string, conversations: Conversation[]): Promise<UserPreferences>
   applyPreferences(userId: string, response: string): Promise<string>
   updatePreferences(userId: string, feedback: UserFeedback): Promise<void>
   getPreferences(userId: string): Promise<UserPreferences>
+}
+```
+
+### Privacy Controller
+
+```typescript
+interface PrivacyController {
+  deleteUserData(userId: string, options?: DeleteOptions): Promise<void>
+  exportUserData(userId: string): Promise<UserDataExport>
+  updatePrivacySettings(userId: string, settings: PrivacySettings): Promise<void>
+  getPrivacySettings(userId: string): Promise<PrivacySettings>
+  auditDataAccess(userId: string, operation: string): Promise<void>
+}
+```
+
+### Search Service
+
+```typescript
+interface SearchService {
+  searchConversations(userId: string, query: SearchQuery): Promise<SearchResult[]>
+  searchByKeywords(userId: string, keywords: string[]): Promise<SearchResult[]>
+  searchByDateRange(userId: string, startDate: Date, endDate: Date): Promise<SearchResult[]>
+  searchByTopics(userId: string, topics: string[]): Promise<SearchResult[]>
+}
+```
+
+### Storage Layer
+
+```typescript
+interface StorageLayer {
+  storeConversation(conversation: Conversation): Promise<void>
+  getConversation(conversationId: string): Promise<Conversation>
+  getUserConversations(userId: string, limit?: number): Promise<Conversation[]>
+  deleteConversation(conversationId: string): Promise<void>
+  storeUserPreferences(userId: string, preferences: UserPreferences): Promise<void>
+  getUserPreferences(userId: string): Promise<UserPreferences>
+  deleteUserData(userId: string): Promise<void>
+  healthCheck(): Promise<HealthStatus>
 }
 ```
 

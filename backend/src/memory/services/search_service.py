@@ -7,7 +7,7 @@ import logging
 from typing import List, Dict, Set, Tuple, Optional
 from datetime import datetime
 from collections import Counter
-from ..interfaces.search_service import SearchServiceInterface
+from ..interfaces import SearchServiceInterface
 from ..models import SearchQuery, SearchResult, Conversation, Message, DateRange
 from ..models.search import SearchResultHighlight
 from ..models.conversation import ConversationMetadata

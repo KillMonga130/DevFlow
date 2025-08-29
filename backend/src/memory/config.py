@@ -57,10 +57,6 @@ class MemoryConfig(BaseSettings):
         case_sensitive = False
 
 
-# Global configuration instance
-memory_config = MemoryConfig()
-
-
 def get_memory_config() -> MemoryConfig:
     """Get the memory system configuration."""
-    return memory_config
+    return MemoryConfig()

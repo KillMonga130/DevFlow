@@ -18,6 +18,8 @@ class MessageRole(str, Enum):
 
 class MessageMetadata(BaseModel):
     """Metadata for individual messages."""
+    model_config = {"protected_namespaces": ()}
+    
     tokens: Optional[int] = None
     processing_time: Optional[float] = None
     model_used: Optional[str] = None
@@ -320,7 +322,10 @@ class Conversation(BaseModel):
     
     def clone(self) -> 'Conversation':
         """Create a deep copy of the conversation."""
-        return self.from_dict(self.to_dict())
+        data = self.to_dict()
+        # Generate new ID for the clone
+        data['id'] = str(uuid.uuid4())
+        return self.from_dict(data)
     
     def merge_with(self, other: 'Conversation') -> 'Conversation':
         """Merge this conversation with another conversation."""

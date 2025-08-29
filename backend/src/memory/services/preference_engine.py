@@ -7,7 +7,7 @@ import logging
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from typing import List, Dict, Any, Optional, Set, Tuple
-from ..interfaces.preference_engine import PreferenceEngineInterface
+from ..interfaces import PreferenceEngineInterface
 from ..models import (
     UserPreferences, Conversation, UserFeedback, Message, MessageRole
 )

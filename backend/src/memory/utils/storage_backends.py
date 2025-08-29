@@ -8,7 +8,7 @@ import logging
 from abc import ABC, abstractmethod
 from typing import List, Optional, Dict, Any, Union
 from datetime import datetime, timezone
-from ..interfaces.storage_layer import StorageLayerInterface
+from ..interfaces import StorageLayerInterface
 from ..models import (
     Conversation, ConversationSummary, UserPreferences, 
     PrivacySettings, SearchResult
