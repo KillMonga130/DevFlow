@@ -1,3 +1,0 @@
-"""
-Memory service middleware package.
-"""
