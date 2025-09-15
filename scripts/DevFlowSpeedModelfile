@@ -1,0 +1,11 @@
+FROM devflow-gpt
+
+# Speed-first optimizations for real-time DevFlow responses
+PARAMETER temperature 0.2
+PARAMETER top_p 0.6
+PARAMETER top_k 15
+PARAMETER repeat_penalty 1.1
+PARAMETER num_ctx 2048
+PARAMETER num_predict 256
+PARAMETER num_thread -1
+PARAMETER num_gpu -1

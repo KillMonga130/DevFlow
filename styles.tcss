@@ -1,0 +1,49 @@
+#main_container {
+    layout: grid;
+    grid-size: 2 2;
+    grid-rows: 1fr 1fr;
+    grid-columns: 1fr 1fr;
+    padding: 1;
+    gap: 1;
+}
+
+#exercise_panel {
+    border: solid #666;
+    height: 100%;
+    width: 100%;
+}
+
+#editor_panel {
+    border: solid #666;
+    height: 100%;
+    width: 100%;
+}
+
+#feedback_panel {
+    border: solid #666;
+    height: 100%;
+    width: 100%;
+}
+
+#metrics_panel {
+    border: solid #666;
+    height: 100%;
+    width: 100%;
+}
+
+.panel-title {
+    background: #4a4a4a;
+    color: #ffffff;
+    padding: 1 2;
+}
+
+CodeEditor {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+Button {
+    width: 100%;
+    margin-top: 1;
+}

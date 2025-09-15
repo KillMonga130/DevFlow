@@ -1,0 +1,118 @@
+[
+  {
+    "scenario": {
+      "language": "javascript",
+      "category": "security",
+      "difficulty": "beginner",
+      "description": "SQL injection in user authentication"
+    },
+    "code": "\nfunction loginUser(username, password) {\n  const query = \"SELECT * FROM users WHERE username = '\" + username + \"' AND password = '\" + password + \"'\";\n  const result = db.query(query);\n  \n  if (result.length > 0) {\n    console.log(\"Login successful for: \" + username);\n    return { success: true, user: result[0] };\n  }\n  \n  return { success: false };\n}",
+    "analysis": [
+      {
+        "line": 2,
+        "type": "security",
+        "severity": "critical",
+        "title": "SQL Injection Vulnerability",
+        "description": "Direct string concatenation allows SQL injection attacks",
+        "suggestion": "Use parameterized queries or prepared statements"
+      },
+      {
+        "line": 5,
+        "type": "security",
+        "severity": "medium",
+        "title": "Information Disclosure",
+        "description": "Logging sensitive username information",
+        "suggestion": "Log user IDs instead of usernames"
+      }
+    ],
+    "timestamp": "2025-09-04T22:10:12.889Z"
+  },
+  {
+    "scenario": {
+      "language": "python",
+      "category": "security",
+      "difficulty": "intermediate",
+      "description": "XSS vulnerability in web form"
+    },
+    "code": "// XSS vulnerability in web form example code",
+    "analysis": [],
+    "timestamp": "2025-09-04T22:10:12.890Z"
+  },
+  {
+    "scenario": {
+      "language": "java",
+      "category": "security",
+      "difficulty": "advanced",
+      "description": "Insecure deserialization"
+    },
+    "code": "// Insecure deserialization example code",
+    "analysis": [],
+    "timestamp": "2025-09-04T22:10:12.890Z"
+  },
+  {
+    "scenario": {
+      "language": "javascript",
+      "category": "performance",
+      "difficulty": "beginner",
+      "description": "Inefficient DOM manipulation"
+    },
+    "code": "// Inefficient DOM manipulation example code",
+    "analysis": [],
+    "timestamp": "2025-09-04T22:10:12.890Z"
+  },
+  {
+    "scenario": {
+      "language": "python",
+      "category": "performance",
+      "difficulty": "intermediate",
+      "description": "N+1 database query problem"
+    },
+    "code": "\ndef get_user_posts(user_ids):\n    posts = []\n    for user_id in user_ids:\n        user_posts = db.query(\"SELECT * FROM posts WHERE user_id = %s\", user_id)\n        for post in user_posts:\n            post['author'] = db.query(\"SELECT name FROM users WHERE id = %s\", post['user_id'])[0]\n            posts.append(post)\n    return posts",
+    "analysis": [],
+    "timestamp": "2025-09-04T22:10:12.890Z"
+  },
+  {
+    "scenario": {
+      "language": "java",
+      "category": "performance",
+      "difficulty": "advanced",
+      "description": "Memory leak in collection usage"
+    },
+    "code": "// Memory leak in collection usage example code",
+    "analysis": [],
+    "timestamp": "2025-09-04T22:10:12.890Z"
+  },
+  {
+    "scenario": {
+      "language": "javascript",
+      "category": "logic",
+      "difficulty": "beginner",
+      "description": "Off-by-one error in array processing"
+    },
+    "code": "// Off-by-one error in array processing example code",
+    "analysis": [],
+    "timestamp": "2025-09-04T22:10:12.890Z"
+  },
+  {
+    "scenario": {
+      "language": "python",
+      "category": "logic",
+      "difficulty": "intermediate",
+      "description": "Race condition in async code"
+    },
+    "code": "// Race condition in async code example code",
+    "analysis": [],
+    "timestamp": "2025-09-04T22:10:12.890Z"
+  },
+  {
+    "scenario": {
+      "language": "java",
+      "category": "logic",
+      "difficulty": "advanced",
+      "description": "Incorrect exception handling flow"
+    },
+    "code": "\npublic class CacheManager {\n    private Map<String, Object> cache = new HashMap<>();\n    \n    public void updateCache(String key, Object value) {\n        try {\n            cache.put(key, value);\n            notifyListeners(key, value);\n        } catch (Exception e) {\n            cache.remove(key);\n            throw e;\n        }\n    }\n    \n    private void notifyListeners(String key, Object value) throws Exception {\n        if (value == null) {\n            throw new IllegalArgumentException(\"Value cannot be null\");\n        }\n    }\n}",
+    "analysis": [],
+    "timestamp": "2025-09-04T22:10:12.890Z"
+  }
+]

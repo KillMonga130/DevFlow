@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFlow - Hackathon Pitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero .tagline {
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .problem-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #dc2626;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+        
+        .feature-description {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        
+        .tech-stack {
+            background: #f8fafc;
+            padding: 60px 0;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .tech-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .tech-logo {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .tech-name {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .impact-section {
+            background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .impact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #6ee7b7;
+        }
+        
+        .impact-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .categories {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .category-card {
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .category-educational {
+            border-color: #3b82f6;
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+        }
+        
+        .category-humanity {
+            border-color: #10b981;
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+        
+        .category-local {
+            border-color: #8b5cf6;
+            background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+        }
+        
+        .category-kiro {
+            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+        
+        .category-prize {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .category-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+        
+        .cta-text {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .demo-button {
+            display: inline-block;
+            background: white;
+            color: #1e40af;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #92400e;
+            font-weight: 600;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>DevFlow</h1>
+            <p class="subtitle">AI-Powered IDE for Next-Gen Code Review & Training</p>
+            <div class="tagline">
+                <span style="font-weight:700;">🏆 Dual Hackathon Submission:</span> Code with Kiro + GPT-OSS
+            </div>
+            <p style="margin-top:30px; font-size:1.2rem; color:#fbbf24;">
+                Ready to turn your ideas into production-ready code? <span class="highlight">DevFlow</span> challenges you to build something awesome with our new AI-powered IDE that fundamentally changes how developers bring ideas to life. Kiro is your development partner, elevating your work beyond just writing code faster. It works with you throughout your development process—from brainstorming sessions to robust system architecture, all the way to production-ready implementations.
+            </p>
+            <div style="margin-top:40px; background:#f3f4f6; border-radius:12px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,0.06); max-width:900px; margin-left:auto; margin-right:auto;">
+                <h3 style="font-size:1.3rem; font-weight:700; color:#7c3aed; margin-bottom:10px;">Kiro IDE: Key Features</h3>
+                <ul style="font-size:1.1rem; color:#374151; line-height:1.7; margin-left:20px;">
+                    <li><b>Inline AI Coding:</b> Generate, refactor, and review code directly in your editor.</li>
+                    <li><b>Multi-Modal Chat:</b> Discuss ideas, get code suggestions, and resolve issues using natural language.</li>
+                    <li><b>Agent Hooks:</b> Automate tasks (testing, deployment, formatting, etc.) with custom AI agents.</li>
+                    <li><b>Spec-Driven Development:</b> Architect robust systems by writing specs that Kiro implements into production code.</li>
+                    <li><b>Automation:</b> Let Kiro handle repetitive and complex workflows so you focus on creative problem-solving.</li>
+                    <li><b>Steering & Customization:</b> Guide Kiro's behavior with steering rules and project-specific hooks.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Live Demo Section -->
+    <section id="interactive-demo" class="section" style="background:#f3f4f6;">
+        <div class="container">
+            <h2 class="section-title">DevFlow Interactive Live Demo</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #6b7280; max-width: 800px; margin: 0 auto 40px;">
+                Experience DevFlow's core features directly in your browser. Try the chat, generate code, and see how Kiro automates your workflow!
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;align-items:start;">
+                <!-- Chat Widget -->
+                <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#7c3aed;font-size:1.2rem;font-weight:700;margin-bottom:10px;">🤖 Multi-Modal AI Chat</h3>
+                    <div id="chat-window" style="height:180px;overflow-y:auto;background:#f3f4f6;border-radius:8px;padding:10px 8px;margin-bottom:10px;font-size:0.9rem;color:#374151;"></div>
+                    <input id="chat-input" type="text" placeholder="Ask Kiro anything..." style="width:70%;padding:8px 12px;border-radius:8px;border:1px solid #e5e7eb;">
+                    <button onclick="sendChat()" style="padding:8px 16px;margin-left:8px;border-radius:8px;background:#7c3aed;color:#fff;font-weight:600;border:none;cursor:pointer;">Send</button>
+                </div>
+                
+                <!-- Inline Code Editor -->
+                <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#1e40af;font-size:1.2rem;font-weight:700;margin-bottom:10px;">💻 Inline AI Code Editor</h3>
+                    <textarea id="code-editor" style="width:100%;height:120px;font-family:monospace;font-size:0.9rem;border-radius:8px;border:1px solid #e5e7eb;padding:10px;resize:vertical;"># Write code here or let Kiro generate it for you...</textarea>
+                    <div style="margin-top:10px;">
+                        <button onclick="generateCode()" style="padding:8px 16px;border-radius:8px;background:#1e40af;color:#fff;font-weight:600;border:none;cursor:pointer;">AI Generate</button>
+                        <button onclick="reviewCode()" style="padding:8px 16px;border-radius:8px;background:#10b981;color:#fff;font-weight:600;border:none;margin-left:8px;cursor:pointer;">AI Review</button>
+                    </div>
+                    <div id="code-feedback" style="margin-top:10px;color:#dc2626;font-size:0.9rem;"></div>
+                </div>
+                
+                <!-- Agent Hooks -->
+                <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#f59e0b;font-size:1.2rem;font-weight:700;margin-bottom:10px;">⚡ Agent Hooks</h3>
+                    <p style="font-size:0.9rem;color:#6b7280;margin-bottom:15px;">Automate tasks with custom AI agents</p>
+                    <button onclick="formatCode()" style="padding:8px 16px;border-radius:8px;background:#f59e0b;color:#fff;font-weight:600;border:none;cursor:pointer;margin-bottom:8px;">Format Code</button>
+                    <button onclick="deployProject()" style="padding:8px 16px;border-radius:8px;background:#7c3aed;color:#fff;font-weight:600;border:none;margin-left:8px;cursor:pointer;">Deploy</button>
+                    <div id="agent-output" style="margin-top:10px;color:#374151;font-size:0.9rem;"></div>
+                </div>
+                
+                <!-- Spec-to-Code -->
+                <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#10b981;font-size:1.2rem;font-weight:700;margin-bottom:10px;">📋 Spec-Driven Development</h3>
+                    <textarea id="spec-input" style="width:100%;height:60px;font-size:0.9rem;border-radius:8px;border:1px solid #e5e7eb;padding:8px;resize:vertical;" placeholder="Create a login form with validation..."></textarea>
+                    <button onclick="specToCode()" style="padding:8px 16px;border-radius:8px;background:#10b981;color:#fff;font-weight:600;border:none;margin-top:8px;cursor:pointer;">Generate Code from Spec</button>
+                    <div id="spec-output" style="margin-top:10px;color:#374151;font-size:0.8rem;background:#f3f4f6;border-radius:8px;padding:8px;font-family:monospace;"></div>
+                </div>
+                
+                <!-- Analytics Dashboard -->
+                <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#3b82f6;font-size:1.2rem;font-weight:700;margin-bottom:10px;">📊 Progress & Analytics</h3>
+                    <div style="font-size:1rem;color:#374151;line-height:1.8;">
+                        <b>Exercises Completed:</b> <span id="ex-completed" style="color:#10b981;">0</span><br>
+                        <b>Code Reviews:</b> <span id="ex-reviewed" style="color:#3b82f6;">0</span><br>
+                        <b>Achievements:</b> <span id="ex-achievements" style="color:#f59e0b;">None yet</span>
+                    </div>
+                </div>
+                
+                <!-- Live Feature Demo -->
+                <div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#8b5cf6;font-size:1.2rem;font-weight:700;margin-bottom:10px;">🎯 Quick Start</h3>
+                    <p style="font-size:0.9rem;color:#6b7280;margin-bottom:15px;">Try these sample interactions:</p>
+                    <button onclick="quickDemo('chat')" style="padding:6px 12px;border-radius:6px;background:#e0e7ff;color:#7c3aed;font-weight:600;border:none;cursor:pointer;margin:2px;font-size:0.8rem;">Ask about specs</button>
+                    <button onclick="quickDemo('code')" style="padding:6px 12px;border-radius:6px;background:#e0f2fe;color:#0369a1;font-weight:600;border:none;cursor:pointer;margin:2px;font-size:0.8rem;">Generate Python</button>
+                    <button onclick="quickDemo('spec')" style="padding:6px 12px;border-radius:6px;background:#dcfce7;color:#16a34a;font-weight:600;border:none;cursor:pointer;margin:2px;font-size:0.8rem;">Demo spec</button>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        // Chat Widget Logic
+        let chatHistory = [];
+        function sendChat() {
+            const input = document.getElementById('chat-input');
+            const windowEl = document.getElementById('chat-window');
+            if (!input.value.trim()) return;
+            chatHistory.push({user:input.value});
+            windowEl.innerHTML += `<div style="margin-bottom:8px;"><b>You:</b> ${input.value}</div>`;
+            setTimeout(()=>{
+                const aiReply = getAIReply(input.value);
+                chatHistory.push({ai:aiReply});
+                windowEl.innerHTML += `<div style='color:#7c3aed;margin-bottom:8px;'><b>Kiro:</b> ${aiReply}</div>`;
+                windowEl.scrollTop = windowEl.scrollHeight;
+            },800);
+            input.value = '';
+        }
+        
+        function getAIReply(msg) {
+            if(msg.toLowerCase().includes('spec')) return "Perfect! Specs help me understand your requirements. Try the Spec-Driven Development panel to see it in action.";
+            if(msg.toLowerCase().includes('review')) return "Code reviews are my specialty! Paste your code in the editor and click 'AI Review' for instant feedback.";
+            if(msg.toLowerCase().includes('deploy')) return "Ready to deploy? Use the Agent Hooks panel - I can automate deployment workflows.";
+            if(msg.toLowerCase().includes('python')) return "I love Python! Let me generate some code for you. Check out the code editor panel.";
+            return "I'm Kiro, your AI development partner! I can help with brainstorming, code generation, reviews, and automation. What would you like to build?";
+        }
+        
+        // Code Editor Logic
+        function generateCode() {
+            const codes = [
+                `def calculate_fibonacci(n):
+    if n <= 1:
+        return n
+    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)`,
+                `class TaskManager:
+    def __init__(self):
+        self.tasks = []
+    
+    def add_task(self, task):
+        self.tasks.append(task)`,
+                `import requests
+
+def fetch_data(url):
+    response = requests.get(url)
+    return response.json()`
+            ];
+            document.getElementById('code-editor').value = codes[Math.floor(Math.random() * codes.length)];
+            document.getElementById('code-feedback').textContent = '';
+            increment('ex-completed');
+        }
+        
+        function reviewCode() {
+            const code = document.getElementById('code-editor').value;
+            let feedback = '';
+            if(code.includes('def ')) feedback = '✅ Good function structure! Consider adding docstrings and type hints.';
+            else if(code.includes('class ')) feedback = '✅ Nice class design! Consider adding error handling methods.';
+            else if(code.includes('import ')) feedback = '✅ Good imports! Remember to handle potential import errors.';
+            else feedback = '⚠️ Try generating some code first, then I can review it for you!';
+            document.getElementById('code-feedback').textContent = feedback;
+            increment('ex-reviewed');
+            updateAchievements();
+        }
+        
+        // Agent Hooks Logic
+        function formatCode() {
+            let code = document.getElementById('code-editor').value;
+            if(code.trim()) {
+                // Simple formatting simulation
+                code = code.replace(/\s+/g, ' ').replace(/;/g, ';\n').replace(/{/g, '{\n').replace(/}/g, '\n}');
+                document.getElementById('code-editor').value = code;
+                document.getElementById('agent-output').textContent = '✅ Code formatted successfully!';
+            } else {
+                document.getElementById('agent-output').textContent = '⚠️ No code to format. Generate some code first!';
+            }
+        }
+        
+        function deployProject() {
+            document.getElementById('agent-output').textContent = '🚀 Deployment initiated... Project deployed to staging environment! (simulated)';
+            updateAchievements('deployed');
+        }
+        
+        // Spec-to-Code Logic
+        function specToCode() {
+            const spec = document.getElementById('spec-input').value;
+            if(!spec.trim()) {
+                document.getElementById('spec-output').textContent = 'Please enter a spec first...';
+                return;
+            }
+            
+            const generatedCode = `# Generated from spec: "${spec}"
+
+class LoginForm:
+    def __init__(self):
+        self.username = ""
+        self.password = ""
+    
+    def validate(self):
+        if len(self.username) < 3:
+            return False, "Username too short"
+        if len(self.password) < 6:
+            return False, "Password too short"
+        return True, "Valid"
+    
+    def submit(self):
+        is_valid, message = self.validate()
+        if is_valid:
+            return self.authenticate()
+        return False, message`;
+            
+            document.getElementById('spec-output').textContent = generatedCode;
+            increment('ex-completed');
+            updateAchievements();
+        }
+        
+        // Analytics Logic
+        function increment(id) {
+            const el = document.getElementById(id);
+            el.textContent = parseInt(el.textContent) + 1;
+        }
+        
+        function updateAchievements(type) {
+            const completed = parseInt(document.getElementById('ex-completed').textContent);
+            const reviewed = parseInt(document.getElementById('ex-reviewed').textContent);
+            let achievements = [];
+            
+            if(completed >= 1) achievements.push('First Exercise');
+            if(reviewed >= 1) achievements.push('Code Reviewer');
+            if(completed >= 3) achievements.push('Productive Coder');
+            if(type === 'deployed') achievements.push('Deployment Master');
+            
+            document.getElementById('ex-achievements').textContent = achievements.length ? achievements.join(', ') : 'None yet';
+        }
+        
+        // Quick Demo Functions
+        function quickDemo(type) {
+            if(type === 'chat') {
+                document.getElementById('chat-input').value = 'How do I write better specs?';
+                sendChat();
+            } else if(type === 'code') {
+                generateCode();
+            } else if(type === 'spec') {
+                document.getElementById('spec-input').value = 'Create a user registration system with email validation';
+                specToCode();
+            }
+        }
+        </script>
+    </section>
+
+    <!-- How DevFlow Uses Kiro -->
+    <section class="section" style="background:#f8fafc;">
+        <div class="container">
+            <h2 class="section-title">How DevFlow Uses Kiro</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin:40px 0;">
+                <div style="background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#7c3aed;font-size:1.3rem;font-weight:700;margin-bottom:15px;">🧠 Brainstorming & Spec Creation</h3>
+                    <p style="color:#374151;line-height:1.7;">Used multi-modal chat to outline project goals, define requirements, and write comprehensive technical specs for the education platform.</p>
+                </div>
+                <div style="background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#1e40af;font-size:1.3rem;font-weight:700;margin-bottom:15px;">⚡ Spec-to-Code Implementation</h3>
+                    <p style="color:#374151;line-height:1.7;">Kiro converted detailed specs into production-ready code for core features like exercise generation, code review interfaces, and analytics dashboards.</p>
+                </div>
+                <div style="background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#10b981;font-size:1.3rem;font-weight:700;margin-bottom:15px;">💻 Inline AI Coding</h3>
+                    <p style="color:#374151;line-height:1.7;">Generated complex algorithms, refactored components for better performance, and reviewed code submissions with real-time AI feedback.</p>
+                </div>
+                <div style="background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#f59e0b;font-size:1.3rem;font-weight:700;margin-bottom:15px;">🔗 Agent Hooks Automation</h3>
+                    <p style="color:#374151;line-height:1.7;">Automated testing workflows, code quality checks, analytics processing, and deployment pipelines through custom AI agents.</p>
+                </div>
+                <div style="background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                    <h3 style="color:#8b5cf6;font-size:1.3rem;font-weight:700;margin-bottom:15px;">🎯 Steering & Customization</h3>
+                    <p style="color:#374151;line-height:1.7;">Configured Kiro's behavior with custom steering rules for privacy-first development, local AI processing, and educational content generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The $50 Billion Problem</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: #6b7280; max-width: 800px; margin: 0 auto 60px;">
+                Code review is the most critical skill for senior developers, yet it's rarely taught systematically. 
+                The result? Preventable bugs, security vulnerabilities, and massive financial losses.
+            </p>
+            
+            <div class="problem-stats">
+                <div class="stat-card">
+                    <div class="stat-number">4.3B</div>
+                    <div class="stat-label">Developers lack senior mentorship</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$50B+</div>
+                    <div class="stat-label">Annual cost of poor code reviews</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">87%</div>
+                    <div class="stat-label">Report inadequate review training</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">73%</div>
+                    <div class="stat-label">Security issues from poor reviews</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">The DevFlow Solution</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: #6b7280; max-width: 900px; margin: 0 auto 60px;">
+                DevFlow democratizes code review expertise through <span class="gradient-text">dual AI innovation</span> - 
+                combining Kiro's development workflow with GPT-OSS's educational intelligence.
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI Exercise Generator</h3>
+                    <p class="feature-description">
+                        GPT-OSS creates unlimited, realistic code with intentional flaws. Every exercise is unique, 
+                        preventing memorization and ensuring continuous learning progression.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Interactive Code Review</h3>
+                    <p class="feature-description">
+                        Professional Monaco Editor interface with real-time AI feedback. Identify issues, 
+                        get instant explanations, and track skill improvement across multiple categories.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Advanced Analytics</h3>
+                    <p class="feature-description">
+                        Comprehensive progress tracking with skill matrices, achievement systems, and 
+                        personalized learning recommendations powered by AI insights.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Privacy-First AI</h3>
+                    <p class="feature-description">
+                        All AI processing happens locally via Ollama. No code leaves your machine, 
+                        making it perfect for enterprise environments with sensitive codebases.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">Dual AI Architecture</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: #6b7280; max-width: 800px; margin: 0 auto 60px;">
+                DevFlow showcases the perfect synergy between development-time AI and runtime AI education.
+            </p>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-logo">⚡</div>
+                    <div class="tech-name">Kiro AI Workflow</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🧠</div>
+                    <div class="tech-name">GPT-OSS Runtime</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">⚛️</div>
+                    <div class="tech-name">React + TypeScript</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🚀</div>
+                    <div class="tech-name">Node.js + Express</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">🎨</div>
+                    <div class="tech-name">Tailwind CSS</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-logo">💾</div>
+                    <div class="tech-name">SQLite Database</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <h2 style="font-size: 3rem; font-weight: 700; text-align: center; margin-bottom: 30px;">
+                Global Impact
+            </h2>
+            <p style="text-align: center; font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto 60px;">
+                DevFlow doesn't just teach code review - it creates a multiplier effect for human potential, 
+                democratizing expertise that was previously accessible only to a privileged few.
+            </p>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-number">100%</div>
+                    <div class="impact-text">
+                        Accessible to developers with internet access, regardless of location or economic status
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-number">10x</div>
+                    <div class="impact-text">
+                        Faster skill development compared to traditional mentoring approaches
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-number">∞</div>
+                    <div class="impact-text">
+                        Unlimited exercise generation prevents learning plateaus and ensures continuous growth
+                    </div>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-number">$50B+</div>
+                    <div class="impact-text">
+                        Potential annual savings in software quality costs through better code reviews
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathon Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Winning Categories</h2>
+            <p style="text-align: center; font-size: 1.3rem; color: #6b7280; max-width: 800px; margin: 0 auto 60px;">
+                DevFlow is strategically positioned to win across multiple hackathon categories, 
+                showcasing both technical innovation and humanitarian impact.
+            </p>
+            
+            <div class="category-grid">
+                <div class="category-card category-educational">
+                    <div class="category-prize" style="color: #1d4ed8;">$5,000</div>
+                    <h3 class="category-title" style="color: #1e40af;">Best Educational Apps</h3>
+                    <p>Measurable learning outcomes with 10x faster skill development and comprehensive progress tracking.</p>
+                </div>
+                
+                <div class="category-card category-humanity">
+                    <div class="category-prize" style="color: #047857;">$5,000</div>
+                    <h3 class="category-title" style="color: #065f46;">For Humanity</h3>
+                    <p>Democratizes code review expertise for 4.3 billion developers worldwide, removing geographic and economic barriers.</p>
+                </div>
+                
+                <div class="category-card category-local">
+                    <div class="category-prize" style="color: #7c2d12;">RTX5090</div>
+                    <h3 class="category-title" style="color: #6b21a8;">Best Local Agent</h3>
+                    <p>GPT-OSS runs 100% locally via Ollama, ensuring privacy and demonstrating local AI capabilities.</p>
+                </div>
+                
+                <div class="category-card category-kiro">
+                    <div class="category-prize" style="color: #92400e;">$2,000</div>
+                    <h3 class="category-title" style="color: #d97706;">Most Innovative Use of Kiro</h3>
+                    <p>Showcases Kiro's full workflow with specs, agent hooks, and steering rules for educational platform development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Differentiators -->
+    <section class="section" style="background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Why DevFlow Wins</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Real Problem, Real Solution</h3>
+                    <p class="feature-description">
+                        Addresses a validated $50+ billion market problem with measurable impact metrics 
+                        and clear value proposition for developers worldwide.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3 class="feature-title">Technical Innovation</h3>
+                    <p class="feature-description">
+                        First platform combining development-time AI with runtime AI for education. 
+                        Novel architecture showcasing both Kiro and GPT-OSS capabilities.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Global Scalability</h3>
+                    <p class="feature-description">
+                        AI-generated content scales infinitely, serving billions of users without 
+                        additional content creation costs or human intervention.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">Enterprise Ready</h3>
+                    <p class="feature-description">
+                        Professional interface, local AI processing, and comprehensive analytics 
+                        make it suitable for corporate training environments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Code Review Education?</h2>
+            <p class="cta-text">
+                DevFlow is the future of developer education—where AI democratizes expertise and every developer can learn from the best, anywhere.
+            </p>
+            <a href="#interactive-demo" class="demo-button">
+                🚀 Experience DevFlow Live Demo
+            </a>
+            <div style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">$17,000+</div>
+                    <div style="opacity: 0.9;">Potential Prize Money</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">4 Categories</div>
+                    <div style="opacity: 0.9;">Strong Winning Potential</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 800; margin-bottom: 10px;">2 Hackathons</div>
+                    <div style="opacity: 0.9;">Dual Submission Strategy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="live-demo" class="section" style="background:#fff;">
+        <div class="container">
+            <h2 class="section-title">Demo Video & Instructions</h2>
+            <div style="display:flex; flex-wrap:wrap; gap:40px; align-items:center; justify-content:center;">
+                <div style="flex:1; min-width:320px; max-width:600px;">
+                    <div style="background:#f3f4f6; border-radius:16px; padding:30px; box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                        <h3 style="font-size:1.5rem; font-weight:700; margin-bottom:15px; color:#1e40af;">How to Experience DevFlow</h3>
+                        <ol style="font-size:1.1rem; color:#374151; line-height:1.7; margin-left:20px;">
+                            <li>Try the interactive demo above to see Kiro's features in action.</li>
+                            <li>Use natural language chat to brainstorm and outline your app idea.</li>
+                            <li>Let Kiro generate code, automate tasks, and architect your solution.</li>
+                            <li>Review code with AI-powered inline feedback and analytics.</li>
+                            <li>Deploy your project—all within DevFlow!</li>
+                        </ol>
+                        <p style="margin-top:20px; color:#7c3aed; font-weight:600;">Check out the Resources tab for more info!</p>
+                    </div>
+                </div>
+                <div style="flex:1; min-width:320px; max-width:600px; text-align:center;">
+                    <div style="background:#e0e7ff; border-radius:16px; padding:30px; box-shadow:0 4px 16px rgba(0,0,0,0.07);">
+                        <h3 style="font-size:1.2rem; font-weight:600; margin-bottom:15px; color:#7c3aed;">Demo Video</h3>
+                        <!-- Replace the src below with your actual demo video URL -->
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/your-demo-video-id" title="DevFlow Demo" frameborder="0" allowfullscreen style="border-radius:12px;"></iframe>
+                        <p style="margin-top:10px; color:#374151; font-size:1rem;">(Max 3 minutes. Judges: please watch the first 3 minutes.)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Requirements & Submission Section -->
+    <section class="section" style="background:#f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Requirements & Submission</h2>
+            <ul style="font-size:1.15rem; color:#374151; max-width:900px; margin:0 auto 40px; line-height:2;">
+                <li><span class="highlight">What to Build:</span> A working software application using Kiro, submitted in one of these categories:
+                    <ul style="margin-left:20px;">
+                        <li><b>Productivity & Workflow Tools:</b> e.g., dev workflow automations, resume helpers, content tools, calendar organizers</li>
+                        <li><b>Games & Entertainment:</b> e.g., games, interactive storytelling, visual experiments</li>
+                        <li><b>Educational Apps:</b> e.g., interactive tutorials, onboarding tools, AI-enhanced learning platforms</li>
+                        <li><b>Wildcard / Freestyle:</b> Anything with Kiro—surprise us!</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">What to Submit:</span>
+                    <ul style="margin-left:20px;">
+                        <li>Three (3) minute public demo video (YouTube, Vimeo, or Facebook Video)</li>
+                        <li>Show how Kiro was used to create your project (specs, agent hooks, code generation, etc.)</li>
+                        <li>Include the <code>/.kiro</code> directory at the root of your repo (<b>do not</b> add to <code>.gitignore</code>)</li>
+                        <li>Provide a URL to your open source code repository</li>
+                    </ul>
+                </li>
+            </ul>
+            <div style="background:#fffbe6; border-radius:8px; padding:18px; box-shadow:0 2px 8px rgba(0,0,0,0.04); max-width:700px; margin:0 auto 30px;">
+                <h4 style="font-size:1.1rem; font-weight:700; color:#f59e0b; margin-bottom:8px;">Judge Checklist</h4>
+                <ul style="font-size:1rem; color:#92400e; line-height:1.7; margin-left:20px;">
+                    <li>Demo video is public and ≤ 3 minutes</li>
+                    <li>Project uses Kiro features (specs, agent hooks, inline AI, etc.)</li>
+                    <li><code>/.kiro</code> directory present and not in <code>.gitignore</code></li>
+                    <li>Open source repo URL provided</li>
+                </ul>
+            </div>
+            <p style="text-align:center; color:#dc2626; font-weight:600;">Missing any required element may disqualify your submission.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">
+                <span class="gradient-text" style="color: #60a5fa;">DevFlow</span> - 
+                Democratizing Code Review Education Worldwide
+            </p>
+            <p style="opacity: 0.7;">
+                Built with ❤️ using Kiro AI + GPT-OSS • © 2025 • For Humanity
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+Screen {
+    background: #1f1f1f;
+}
+
+#main_container {
+    layout: grid;
+    grid-size: 2 2;
+    grid-rows: 1fr 1fr;
+    grid-columns: 1fr 1fr;
+    padding: 1;
+    background: #2b2b2b;
+}
+
+#exercise_panel, #editor_panel, #feedback_panel, #metrics_panel {
+    border: heavy #444;
+    background: #333;
+    margin: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.panel-title {
+    background: #2d5a7c;
+    color: #ffffff;
+    padding: 1 2;
+    text-align: center;
+}
+
+Button {
+    width: 100%;
+    margin-top: 1;
+    background: #4a7dba;
+    color: #ffffff;
+    height: 3;
+    border: tall #2d5a7c;
+}
+
+Button:hover {
+    background: #2d5a7c;
+}
+
+#submit_button {
+    dock: bottom;
+    margin: 1;
+}
+
+ProgressBar {
+    width: 100%;
+    height: 1;
+    color: #4a7dba;
+}
+
+TextArea {
+    height: 100%;
+    border: none;
+    background: #2b2b2b;
+    color: #ffffff;
+}
+
+RichLog {
+    background: #2b2b2b;
+    color: #ffffff;
+    height: 100%;
+    border: none;
+    padding: 1;
+}

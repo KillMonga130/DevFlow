@@ -1,0 +1,404 @@
+.app {
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Cards */
+.main-card, .stats-card, .info-card, .exercise-card, .results-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.main-card {
+  text-align: center;
+}
+
+.main-card h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.main-card p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Stats */
+.stats-card h3 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat {
+  text-align: center;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.primary-button, .secondary-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: #f8f9fa;
+  color: #333;
+  border: 2px solid #e9ecef;
+}
+
+.secondary-button:hover {
+  background: #e9ecef;
+}
+
+/* Info Card */
+.info-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.info-card ol {
+  color: #666;
+  padding-left: 20px;
+}
+
+.info-card li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Exercise */
+.exercise-card {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.code-container {
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.code-header {
+  background: #2d2d2d;
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.issues-count {
+  background: #667eea;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.code-content {
+  padding: 0;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.code-line {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.code-line:hover {
+  background: #2d2d2d;
+}
+
+.code-line.has-issue {
+  background: #4a2c2a;
+  border-left-color: #ff6b6b;
+}
+
+.line-number {
+  color: #666;
+  width: 40px;
+  text-align: right;
+  margin-right: 20px;
+  user-select: none;
+  padding-left: 15px;
+}
+
+.line-content {
+  color: #f8f8f2;
+  flex: 1;
+  padding-right: 15px;
+}
+
+.issue-marker {
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.instructions {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.instructions h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.instructions ul {
+  color: #666;
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.action-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Results */
+.results-card {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.score-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.score-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.score-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.feedback h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.tip {
+  color: #666;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.comparison-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.comparison-column h4 {
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.issues-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.issue-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.issue-item.found {
+  background: #e8f5e8;
+  border-left: 4px solid #28a745;
+}
+
+.issue-item.correct {
+  background: #e8f5e8;
+  border-left: 4px solid #28a745;
+}
+
+.issue-item.missed {
+  background: #ffe6e6;
+  border-left: 4px solid #dc3545;
+}
+
+.issue-line {
+  font-weight: 600;
+  margin-right: 10px;
+  min-width: 60px;
+}
+
+.issue-type {
+  background: #667eea;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+.issue-title {
+  flex: 1;
+  color: #333;
+}
+
+.missed-label {
+  background: #dc3545;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.no-issues {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .comparison-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .score-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .score-circle {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .primary-button, .secondary-button {
+    margin: 0;
+  }
+}
